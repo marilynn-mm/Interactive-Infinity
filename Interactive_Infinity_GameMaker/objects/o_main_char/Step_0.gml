@@ -3,13 +3,15 @@ speed = moveSpd;
 gravity = 0;
 friction = 0;
 
+// create camera following main char movement
+instance_create_layer(x, y, "Instances", o_camera);
 
 // get inputs 
 
 var rightKey = keyboard_check(ord("D"))|| keyboard_check(vk_right);
 var leftKey = keyboard_check(ord("A"))|| keyboard_check(vk_left);
-var downKey = keyboard_check(ord("S"))|| keyboard_check(vk_up);
-var upKey = keyboard_check(ord("W"))|| keyboard_check(vk_down);
+var downKey = keyboard_check(ord("S"))|| keyboard_check(vk_down);
+var upKey = keyboard_check(ord("W"))|| keyboard_check(vk_up);
 
 /* Debugging
 if (place_meeting(x, y, o_wall)) {
