@@ -131,7 +131,15 @@ for (var _y = 1; _y < height_ - 1; _y++) {
 }
 
 if (!ds_list_empty(global.floor_tiles)) {
-    // Get a random index from the list
+    
+	// Print the contents of the floor tiles list
+    show_debug_message("Contents of global.floor_tiles:");
+    for (var i = 0; i < ds_list_size(global.floor_tiles); i++) {
+        var pos = global.floor_tiles[| i];  // Get the (x, y) position
+        show_debug_message("Tile " + string(i) + ": [" + string(pos[0]) + ", " + string(pos[1]) + "]");
+    }
+	
+	// Get a random index from the list
     var random_index = irandom(ds_list_size(global.floor_tiles) - 1);
     var pos = global.floor_tiles[| random_index]; // Get the [x, y] position
 
