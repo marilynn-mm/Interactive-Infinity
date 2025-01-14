@@ -35,6 +35,7 @@
     {"$GMObjectProperty":"v1","%Name":"moveSpd","filters":[],"listItems":[],"multiselect":false,"name":"moveSpd","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"xspd","filters":[],"listItems":[],"multiselect":false,"name":"xspd","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"yspd","filters":[],"listItems":[],"multiselect":false,"name":"yspd","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"attributes","filters":[],"listItems":[],"multiselect":false,"name":"attributes","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"none","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
