@@ -28,3 +28,9 @@ if (global.grid_[# floor(x / CELL_WIDTH), floor(y / CELL_HEIGHT)] == VOID) {
         show_debug_message("Player teleported to nearest floor tile!");
     }
 }
+
+//TODO add attribute generation
+
+//  ex:
+// var attributes = call_chat_gpt("generate a list of starting attributes and items for a player in a dungeon RPG")
+var attributes = "none";
