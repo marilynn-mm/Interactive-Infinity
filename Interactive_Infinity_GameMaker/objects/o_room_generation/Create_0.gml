@@ -133,20 +133,35 @@ for (var _y = 1; _y < height_ - 1; _y++) {
 if (!ds_list_empty(global.floor_tiles)) {
     
 	// Print the contents of the floor tiles list
-    show_debug_message("Contents of global.floor_tiles:");
-    for (var i = 0; i < ds_list_size(global.floor_tiles); i++) {
-        var pos = global.floor_tiles[| i];  // Get the (x, y) position
-        show_debug_message("Tile " + string(i) + ": [" + string(pos[0]) + ", " + string(pos[1]) + "]");
-    }
+    //show_debug_message("Contents of global.floor_tiles:");
+    //for (var i = 0; i < ds_list_size(global.floor_tiles); i++) {
+    //    var pos = global.floor_tiles[| i];  // Get the (x, y) position
+    //    show_debug_message("Tile " + string(i) + ": [" + string(pos[0]) + ", " + string(pos[1]) + "]");
+    //}
 	
 	// Get a random index from the list
-    var random_index = irandom(ds_list_size(global.floor_tiles) - 1);
-    var pos = global.floor_tiles[| random_index]; // Get the [x, y] position
+    var random_index1 = irandom(ds_list_size(global.floor_tiles) - 1);
+	var random_index2 = irandom(ds_list_size(global.floor_tiles) - 1);
+    var pos_player = global.floor_tiles[| random_index1]; // Get the [x, y] position
+	var pos_AI = global.floor_tiles[| random_index2];
 
     // Use the selected position for the player start
-    var _player_start_x = pos[0];
-    var _player_start_y = pos[1];
+    var _player_start_x = pos_player[0];
+    var _player_start_y = pos_player[1];
     instance_create_layer(_player_start_x, _player_start_y, "Instances", o_main_char);
+	
+	// Use the selected position for the agent start
+    var _AI_start_x = pos_AI[0];
+    var _AI_start_y = pos_AI[1];
+    instance_create_layer(_AI_start_x, _AI_start_y, "Instances", o_AI_agent);
+	instance_create_layer(_AI_start_x, _AI_start_y, "Instances", o_AI_agent)
+	
+	//create door 
+	instance_create_layer(_AI_start_x + 32*2, _AI_start_y,"Instances", o_door);
+
+	// create list of objects 
+
+	
 } else {
     show_debug_message("Error: No valid floor tiles available for player start!");
 }

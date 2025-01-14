@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"send_gpt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"send_gpt",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
