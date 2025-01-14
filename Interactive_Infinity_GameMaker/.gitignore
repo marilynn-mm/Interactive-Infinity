@@ -1,3 +1,6 @@
+# Ignore actual config file with API
+configs/config.json
+
 # Windows
  
 # Windows thumbnail cache files
