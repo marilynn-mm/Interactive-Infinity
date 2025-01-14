@@ -37,7 +37,7 @@
     {"id":{"name":"o_AI_agent","path":"objects/o_AI_agent/o_AI_agent.yy",},},
     {"id":{"name":"o_camera","path":"objects/o_camera/o_camera.yy",},},
     {"id":{"name":"o_connect","path":"objects/o_connect/o_connect.yy",},},
-    {"id":{"name":"o_dialogue_test","path":"objects/o_dialogue_test/o_dialogue_test.yy",},},
+    {"id":{"name":"o_dialogue_instance","path":"objects/o_dialogue_instance/o_dialogue_instance.yy",},},
     {"id":{"name":"o_DialogueParent","path":"objects/o_DialogueParent/o_DialogueParent.yy",},},
     {"id":{"name":"o_door","path":"objects/o_door/o_door.yy",},},
     {"id":{"name":"o_doorback","path":"objects/o_doorback/o_doorback.yy",},},
