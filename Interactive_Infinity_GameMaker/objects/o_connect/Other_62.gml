@@ -16,12 +16,13 @@ var _key = ds_map_find_first(async_load)
 // Starts with the first key (ds_map_find_first) 
 // continues to the next key (ds_map_find_next) in each iteration.
 // Check for key "results" 
+// use _full_message to get full response 
 
 for (var i = 0;i<_size;++i){
 	if (_key == "result")
 	{
 		show_debug_message(async_load[?_key])	
-		var _full_message = json_parse(async_load[?_key])
+		global.return_message = json_parse(async_load[?_key])
 		// Extracts the value associated with the "choice" key from the parsed JSON.
 		// Assigns this value to display_string for use elsewhere in the game.
 		
@@ -29,4 +30,57 @@ for (var i = 0;i<_size;++i){
 	_key = ds_map_find_next(async_load,_key)
 }
 
-// use _full_message to get response 
+
+
+
+
+// Update the characteristics for system 
+// Ensure global.return_message contains valid data
+// Only for creation event
+
+if (variable_struct_exists(global.return_message, "choices")) {
+    var choices_list = global.return_message.choices; // Access "choices"
+    
+    if (array_length(choices_list) > 0) { // Use array_length instead of ds_list_size
+        var first_choice = choices_list[0]; // Access the first element in the array
+        
+        if (variable_struct_exists(first_choice, "message")) {
+            var message_map = first_choice.message; // Access "message"
+            
+            if (variable_struct_exists(message_map, "content")) {
+                var content = message_map.content; // Extract "content"
+                show_debug_message("Content: " + content);
+                
+                // Split content into lines to parse key details
+                var lines = string_split(content, "\n");
+                for (var i = 0; i < array_length(lines); i++) {
+                    var line = string_trim(lines[i]);
+                    
+                    if (string_starts_with(line, "**Character Name:**")) {
+                        global.Character_Name = string_delete(line, 1, 18);
+                    }
+                    else if (string_starts_with(line, "**Personality Traits:**")) {
+                        global.Personality_Trait = string_delete(line, 1, 23);
+                    }
+                    else if (string_starts_with(line, "**Hostility:**")) {
+                        global.Hostility = string_delete(line, 1, 14);
+                    }
+                    else if (string_starts_with(line, "**Current Trust Level:**")) {
+                        global.Current_Trust_Level = string_delete(line, 1, 24);
+                    }
+                    else if (string_starts_with(line, "**Backstory:**")) {
+                        global.Backstory = string_delete(line, 1, 13);
+                    }
+                    else if (string_starts_with(line, "**Objects Description:**")) {
+                        var objects_text = "";
+                        for (var j = i + 1; j < array_length(lines); j++) {
+                            objects_text += string_trim(lines[j]) + "\n";
+                        }
+                        global.Objects_Description = string_trim(objects_text);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}

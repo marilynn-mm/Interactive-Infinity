@@ -41,7 +41,6 @@
     {"id":{"name":"o_DialogueParent","path":"objects/o_DialogueParent/o_DialogueParent.yy",},},
     {"id":{"name":"o_door","path":"objects/o_door/o_door.yy",},},
     {"id":{"name":"o_doorback","path":"objects/o_doorback/o_doorback.yy",},},
-    {"id":{"name":"o_game_controller","path":"objects/o_game_controller/o_game_controller.yy",},},
     {"id":{"name":"o_main_char","path":"objects/o_main_char/o_main_char.yy",},},
     {"id":{"name":"o_room_generation","path":"objects/o_room_generation/o_room_generation.yy",},},
     {"id":{"name":"o_wall","path":"objects/o_wall/o_wall.yy",},},
