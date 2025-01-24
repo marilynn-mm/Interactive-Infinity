@@ -1,3 +1,6 @@
+show_debug_message("room!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+
 if (room != Room2) return; // Exit if not in Room 2
 
 randomize();
@@ -23,7 +26,7 @@ global.floor_tiles = ds_list_create();
 var _controller_x = width_ div 2;
 var _controller_y = height_ div 2;
 var _controller_direction = irandom(3);
-var _steps = 1000;
+var _steps = 150;
 
 //Ensure the controller position is a valid floor
 //var _attempts = 0; // Fail-safe counter
@@ -165,3 +168,4 @@ if (!ds_list_empty(global.floor_tiles)) {
 } else {
     show_debug_message("Error: No valid floor tiles available for player start!");
 }
+

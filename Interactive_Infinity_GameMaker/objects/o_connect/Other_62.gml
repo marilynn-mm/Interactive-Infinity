@@ -71,12 +71,28 @@ if (variable_struct_exists(global.return_message, "choices")) {
                     else if (string_starts_with(line, "**Backstory:**")) {
                         global.Backstory = string_delete(line, 1, 13);
                     }
-                    else if (string_starts_with(line, "**Objects Description:**")) {
+                    else if (string_starts_with(line, "**Object1 Description:**")) {
                         var objects_text = "";
                         for (var j = i + 1; j < array_length(lines); j++) {
                             objects_text += string_trim(lines[j]) + "\n";
                         }
-                        global.Objects_Description = string_trim(objects_text);
+                        global.Object1_Description = string_trim(objects_text);
+                        break;
+                    }
+					else if (string_starts_with(line, "**Object2 Description:**")) {
+                        var objects_text = "";
+                        for (var j = i + 1; j < array_length(lines); j++) {
+                            objects_text += string_trim(lines[j]) + "\n";
+                        }
+                        global.Object2_Description = string_trim(objects_text);
+                        break;
+                    }
+					else if (string_starts_with(line, "**Object3 Description:**")) {
+                        var objects_text = "";
+                        for (var j = i + 1; j < array_length(lines); j++) {
+                            objects_text += string_trim(lines[j]) + "\n";
+                        }
+                        global.Object3_Description = string_trim(objects_text);
                         break;
                     }
                 }
