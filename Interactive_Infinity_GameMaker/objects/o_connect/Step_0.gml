@@ -7,6 +7,6 @@ if (timer_active) {
         show_debug_message("Timer finished!");
         timer_active = false; // Stop the timer
 		// time taken: 56 (use 100 for safe guess) 
-		send_gpt(_system,"what is your name?")
+		//send_gpt(_system,"what is your name?")
     }
 }

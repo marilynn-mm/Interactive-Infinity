@@ -9,7 +9,10 @@
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"o_itemParent",
+    "path":"objects/o_itemParent/o_itemParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"S_item_8",
-    "path":"sprites/S_item_8/S_item_8.yy",
+    "name":"S_item_9",
+    "path":"sprites/S_item_9/S_item_9.yy",
   },
   "spriteMaskId":null,
   "visible":true,

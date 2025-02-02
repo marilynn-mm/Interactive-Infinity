@@ -30,73 +30,111 @@ for (var i = 0;i<_size;++i){
 	_key = ds_map_find_next(async_load,_key)
 }
 
-
-
-
-
 // Update the characteristics for system 
 // Ensure global.return_message contains valid data
 // Only for creation event
 
 if (variable_struct_exists(global.return_message, "choices")) {
     var choices_list = global.return_message.choices; // Access "choices"
+	show_debug_message("updating global begins...")
     
     if (array_length(choices_list) > 0) { // Use array_length instead of ds_list_size
         var first_choice = choices_list[0]; // Access the first element in the array
+		show_debug_message("updating global begins 2...")
         
         if (variable_struct_exists(first_choice, "message")) {
             var message_map = first_choice.message; // Access "message"
+			show_debug_message("updating global begins 3...")
             
             if (variable_struct_exists(message_map, "content")) {
                 var content = message_map.content; // Extract "content"
-                show_debug_message("Content: " + content);
-                
+                show_debug_message("updating global begins 4...")
+				show_debug_message("Content: " + content);
+				
                 // Split content into lines to parse key details
                 var lines = string_split(content, "\n");
-                for (var i = 0; i < array_length(lines); i++) {
-                    var line = string_trim(lines[i]);
-                    
-                    if (string_starts_with(line, "**Character Name:**")) {
-                        global.Character_Name = string_delete(line, 1, 18);
-                    }
-                    else if (string_starts_with(line, "**Personality Traits:**")) {
-                        global.Personality_Trait = string_delete(line, 1, 23);
-                    }
-                    else if (string_starts_with(line, "**Hostility:**")) {
-                        global.Hostility = string_delete(line, 1, 14);
-                    }
-                    else if (string_starts_with(line, "**Current Trust Level:**")) {
-                        global.Current_Trust_Level = string_delete(line, 1, 24);
-                    }
-                    else if (string_starts_with(line, "**Backstory:**")) {
-                        global.Backstory = string_delete(line, 1, 13);
-                    }
-                    else if (string_starts_with(line, "**Object1 Description:**")) {
-                        var objects_text = "";
-                        for (var j = i + 1; j < array_length(lines); j++) {
-                            objects_text += string_trim(lines[j]) + "\n";
-                        }
-                        global.Object1_Description = string_trim(objects_text);
-                        break;
-                    }
-					else if (string_starts_with(line, "**Object2 Description:**")) {
-                        var objects_text = "";
-                        for (var j = i + 1; j < array_length(lines); j++) {
-                            objects_text += string_trim(lines[j]) + "\n";
-                        }
-                        global.Object2_Description = string_trim(objects_text);
-                        break;
-                    }
-					else if (string_starts_with(line, "**Object3 Description:**")) {
-                        var objects_text = "";
-                        for (var j = i + 1; j < array_length(lines); j++) {
-                            objects_text += string_trim(lines[j]) + "\n";
-                        }
-                        global.Object3_Description = string_trim(objects_text);
-                        break;
-                    }
-                }
+				for (var i = 0; i < array_length(lines); i++) {
+				    var line = string_trim(lines[i]);
+
+				    if (string_starts_with(line, "Name:")) {
+				        global.Character_Name = string_trim(string_replace(line, "Name:", ""));
+				        show_debug_message("Character Name set to: " + global.Character_Name);
+				    }
+				    else if (string_starts_with(line, "Personality:")) {
+				        global.Personality_Trait = string_trim(string_replace(line, "Personality:", ""));
+				        show_debug_message("Personality Trait set to: " + global.Personality_Trait);
+				    }
+				    else if (string_starts_with(line, "Hostility:")) {
+				        global.Hostility = string_trim(string_replace(line, "Hostility:", ""));
+				        show_debug_message("Hostility set to: " + global.Hostility);
+				    }
+				    else if (string_starts_with(line, "Trust Level:")) {
+				        global.Current_Trust_Level = string_trim(string_replace(line, "Trust Level:", ""));
+				        show_debug_message("Trust Level set to: " + global.Current_Trust_Level);
+				    }
+				    else if (string_starts_with(line, "Backstory:")) {
+				        global.Backstory = string_trim(string_replace(line, "Backstory:", ""));
+				        show_debug_message("Backstory set to: " + global.Backstory);
+				    }
+				    else if (string_starts_with(line, "Object1 Description:")) {
+				        global.Object1_Description = string_trim(string_replace(line, "Object1 Description:", ""));
+				        show_debug_message("Object1 Description set to: " + global.Object1_Description);
+				    }
+				    else if (string_starts_with(line, "Object2 Description:")) {
+				        global.Object2_Description = string_trim(string_replace(line, "Object2 Description:", ""));
+				        show_debug_message("Object2 Description set to: " + global.Object2_Description);
+				    }
+				    else if (string_starts_with(line, "Object3 Description:")) {
+				        global.Object3_Description = string_trim(string_replace(line, "Object3 Description:", ""));
+				        show_debug_message("Object3 Description set to: " + global.Object3_Description);
+				    }
+				}
+			global.first_request = false;
             }
         }
     }
 }
+
+
+/// think more... this is not working fully! 
+
+
+global.awaiting_response = true;
+
+show_debug_message("global.awaiting_response: " + string(global.awaiting_response));
+show_debug_message("global.first_request: " + string(global.first_request));
+
+if (global.awaiting_response && !global.first_request) {
+    show_debug_message("Enter adding dialogue loop")
+	// waiting_timer += 1; // Increase timer
+
+    // Check if a response is received
+    if (global.return_message != "") {
+        if (variable_global_exists("dialogue") && !is_undefined(global.dialogue)) {
+			global.dialogue.add(s_AI_agent, global.return_message);
+	} else {
+		show_debug_message("ERROR: dialogue instance is undefined or not initialized.");
+	}
+
+	//show_debug_message("-------------testing correct waiting response")
+	//	global.dialogue.add(s_AI_agent, global.return_message);
+		//dialogue.add(s_AI_agent, global.return_message);
+        global.return_message = "";  // Clear after use
+        global.awaiting_response = false;   // Exit waiting state
+        //waiting_timer = 0;           // Reset timer
+    }
+
+    // Handle timeout scenario
+    //if (waiting_timer > waiting_max_time) {
+    //    add_message_to_chat("System", "No response received. Please try again.");
+    //    global.awaiting_response = false;  // Reset system
+    //    waiting_timer = 0;
+    //}
+}
+
+
+
+//if (global.first_request == false){
+//	dialogue.add(s_AI_agent, global.return_message);
+//}
+// it doesn't work because it is updating before a result 

@@ -26,7 +26,7 @@ ds_map_add(global.item_object_map, "O_item_2", o_item2);
 ds_map_add(global.item_object_map, "O_item_3", o_item3);
 ds_map_add(global.item_object_map, "O_item_4", o_item4);
 ds_map_add(global.item_object_map, "O_item_5", o_item5);
-ds_map_add(global.item_object_map, "O_item_6", o_item5);
+ds_map_add(global.item_object_map, "O_item_6", o_item6);
 ds_map_add(global.item_object_map, "O_item_7", o_item7);
 ds_map_add(global.item_object_map, "O_item_8", o_item8);
 ds_map_add(global.item_object_map, "O_item_9", o_item9);
@@ -54,6 +54,7 @@ function array_index_of(array, value) {
 global.item1 = global.items[irandom(array_length(global.items) - 1)];
 show_debug_message(global.item1)
 
+
 global.item2 = global.items[irandom(array_length(global.items) - 1)];
 show_debug_message(global.item2)
 //array_delete(global.items, array_index_of(global.items, global.item2), 1);
@@ -78,22 +79,22 @@ if (!ds_list_empty(global.floor_tiles)) {
     var pos_item3 = global.floor_tiles[| random_index3];
 
     // Use the selected position for the item1
-    var _pos_item1_x = pos_item1[0];
-    var _pos_item1_y = pos_item1[1];
+    global.item1_x = pos_item1[0];
+    global.item1_y = pos_item1[1];
     var _object_to_create1 = ds_map_find_value(global.item_object_map, global.item1.key);
-    instance_create_layer(_pos_item1_x, _pos_item1_y, "Instances", _object_to_create1);
+    instance_create_layer(global.item1_x, global.item1_y, "Instances", _object_to_create1);
 
     // Use the selected position for the item2
-    var _pos_item2_x = pos_item2[0];
-    var _pos_item2_y = pos_item2[1];
+    global.item2_x = pos_item2[0];
+    global.item2_y = pos_item2[1];
     var _object_to_create2 = ds_map_find_value(global.item_object_map, global.item2.key);
-    instance_create_layer(_pos_item2_x, _pos_item2_y, "Instances", _object_to_create2);
+    instance_create_layer(global.item2_x, global.item2_y, "Instances", _object_to_create2);
 
     // Use the selected position for the item3
-    var _pos_item3_x = pos_item3[0];
-    var _pos_item3_y = pos_item3[1];
+    global.item3_x = pos_item3[0];
+    global.item3_y = pos_item3[1];
     var _object_to_create3 = ds_map_find_value(global.item_object_map, global.item3.key);
-	instance_create_layer(_pos_item3_x, _pos_item3_y, "Instances", _object_to_create3);
+	instance_create_layer(global.item3_x, global.item3_y, "Instances", _object_to_create3);
 
 } else {
     show_debug_message("Error: No valid floor tiles available for item placement!");
