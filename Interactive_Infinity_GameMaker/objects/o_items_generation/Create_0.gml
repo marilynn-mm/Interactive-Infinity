@@ -40,15 +40,15 @@ ds_map_add(global.item_object_map, "O_item_15", o_item15);
 show_debug_message(global.items)
 
 //helper function
-function array_index_of(array, value) {
-    var array_length_value = array_length(array); // Store array length for efficiency
-    for (var i = 0; i < array_length_value; i++) {
-        if (array[i] == value) {
-            return i; // Return the index if the value is found
-        }
-    }
-    return -1; // Return -1 if the value is not found in the array
-}
+//function array_index_of(array, value) {
+//    var array_length_value = array_length(array); // Store array length for efficiency
+//    for (var i = 0; i < array_length_value; i++) {
+//        if (array[i] == value) {
+//            return i; // Return the index if the value is found
+//        }
+//    }
+ //   return -1; // Return -1 if the value is not found in the array
+//}
 
 // Pick three random items and display their details
 global.item1 = global.items[irandom(array_length(global.items) - 1)];

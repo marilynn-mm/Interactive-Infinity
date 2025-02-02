@@ -34,6 +34,9 @@
   },
   "name":"Interactive_Infinity_GameMaker",
   "resources":[
+    {"id":{"name":"arcadeClassic","path":"fonts/arcadeClassic/arcadeClassic.yy",},},
+    {"id":{"name":"byteBounce","path":"fonts/byteBounce/byteBounce.yy",},},
+    {"id":{"name":"pixelGame","path":"fonts/pixelGame/pixelGame.yy",},},
     {"id":{"name":"o_AI_agent","path":"objects/o_AI_agent/o_AI_agent.yy",},},
     {"id":{"name":"o_camera","path":"objects/o_camera/o_camera.yy",},},
     {"id":{"name":"o_connect","path":"objects/o_connect/o_connect.yy",},},
