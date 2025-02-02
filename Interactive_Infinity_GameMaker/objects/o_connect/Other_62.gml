@@ -25,10 +25,13 @@ for (var i = 0;i<_size;++i){
 		global.return_message = json_parse(async_load[?_key])
 		// Extracts the value associated with the "choice" key from the parsed JSON.
 		// Assigns this value to display_string for use elsewhere in the game.
-		
 	}
 	_key = ds_map_find_next(async_load,_key)
 }
+
+// message have been returned 
+global.waiting_for_response = false;
+
 
 // Update the characteristics for system 
 // Ensure global.return_message contains valid data
@@ -88,21 +91,22 @@ if (variable_struct_exists(global.return_message, "choices")) {
 				        global.Object3_Description = string_trim(string_replace(line, "Object3 Description:", ""));
 				        show_debug_message("Object3 Description set to: " + global.Object3_Description);
 				    }
+					else if (string_starts_with(line, "Introduction Line:")) {
+				        global.Intro_Line = string_trim(string_replace(line, "Introduction Line:", ""));
+				        show_debug_message("Introduction Line set to: " + global.Intro_Line);
+				    }
+					else {
+						global.http_text = string_trim(string_replace(line, "Content: ", ""));
+						show_debug_message("global.http_text set to: " + global.http_text);
+					}
 				}
-			global.first_request = false;
             }
         }
-    }
+	}
 }
 
 
 /// think more... this is not working fully! 
-
-
-global.awaiting_response = true;
-
-show_debug_message("global.awaiting_response: " + string(global.awaiting_response));
-show_debug_message("global.first_request: " + string(global.first_request));
 
 if (global.awaiting_response && !global.first_request) {
     show_debug_message("Enter adding dialogue loop")
@@ -131,6 +135,7 @@ if (global.awaiting_response && !global.first_request) {
     //    waiting_timer = 0;
     //}
 }
+
 
 
 

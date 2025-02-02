@@ -1,15 +1,29 @@
 // Inherit the parent event
-global.dialogue = new Dialogue();
-show_debug_message("-----Dialogue system initialized.-----");
-
 event_inherited();
 
+// Initializes current_dialogue as an empty struct {}.
+// will hold the currently displayed dialogue entry (which consists of a sprite and a message)
+// later be set to a struct when calling dialogue.pop().
+
+
+global.dialogueDynamic = new Dialogue();
+show_debug_message("-----Dynamic Dialogue system initialized.-----");
+
+// Track dialogue flow
+global.showing_dialogue = false;
+global.user_turn = false;  // Start with the main character
+global.ai_turn = true;  
+global.waiting_for_response = true;  // True when waiting for ChatGPT's API
+
+// Dialogue storage
+main_character_line = global.input_text;
+ai_agent_line = "";  
+
+// global.output_text as filtered AI agent text -- after redesign prompt 
 
 //TODO Add AI here
-global.dialogue.add(s_AI_agent, "This is a test of the dialogue system")
+global.dialogueDynamic.add(s_AI_agent, "This is a test of the dialogue system")
 //global.dialogue.add(s_AI_agent, "Hello");
 
-//response = chat_gpt("you are a npc with the following attributes" + ai_agent_attributes + "talking to a character with the following attributes" + main_character_attributes + "generate three frames of dialogue from the followiung conversation summary and history. Make sure each frame of diaoligue is no longer than a sentence and seperate each frame using a newline." + summary + history"
-//dialogue.add(s_AI_agent, )
 
 

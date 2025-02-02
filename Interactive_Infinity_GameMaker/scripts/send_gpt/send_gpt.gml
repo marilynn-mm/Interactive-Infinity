@@ -11,7 +11,7 @@ function send_gpt(_system,_question){
 						{ "role": "user", "content": _question } // User's input
 					],
 					//"max_tokens": int64(100),
-					"temperature": 0.85,
+					"temperature": 0.5,
 				}
 			
 	var data = json_stringify(_data) 

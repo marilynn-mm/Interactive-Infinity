@@ -64,6 +64,7 @@
     {"id":{"name":"o_items_generation","path":"objects/o_items_generation/o_items_generation.yy",},},
     {"id":{"name":"o_main_char","path":"objects/o_main_char/o_main_char.yy",},},
     {"id":{"name":"o_room_generation","path":"objects/o_room_generation/o_room_generation.yy",},},
+    {"id":{"name":"o_user_input","path":"objects/o_user_input/o_user_input.yy",},},
     {"id":{"name":"o_wall","path":"objects/o_wall/o_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},

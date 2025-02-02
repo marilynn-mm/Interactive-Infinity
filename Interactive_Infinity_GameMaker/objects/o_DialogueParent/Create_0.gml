@@ -1,11 +1,3 @@
-// reates a new instance of the Dialogue object.
-// This means dialogue now has access to the add(), pop(), and count() functions.
-
-//global.dialogue = new Dialogue();
-//show_debug_message("-----Dialogue system initialized.-----");
-
-//global.dialogue = new Dialogue()
-
 // Key tos next
 key_next = vk_space;
 
