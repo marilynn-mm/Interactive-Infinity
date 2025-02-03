@@ -13,14 +13,14 @@ if (variable_global_exists("dialogueDynamic") && !is_undefined(global.dialogueDy
         }
 		else if (global.ai_turn && !global.waiting_for_response) {
 			show_debug_message("first_dialogue, global.ai_turn && !global.waiting_for_response")
-            global.dialogueDynamic.add(s_AI_agent, global.Intro_Line); // Add AI response to dialogue
+            global.dialogueDynamic.add(old_agent, global.Intro_Line); // Add AI response to dialogue
             current_dialogue = global.dialogueDynamic.last();  // Display AI's response
             //first_dialogue = true;
         }
         // If AI is active but still waiting for response
         else if (global.ai_turn && global.waiting_for_response) {
             show_debug_message("first_dialogue, global.ai_turn && global.waiting_for_response")
-			global.dialogueDynamic.add(s_AI_agent, waiting);
+			global.dialogueDynamic.add(old_agent, waiting);
             current_dialogue = global.dialogueDynamic.last(); // Display waiting indicator
             first_dialogue = true;
 		}
@@ -35,14 +35,14 @@ if (variable_global_exists("dialogueDynamic") && !is_undefined(global.dialogueDy
         // If AI is active and response is ready
         else if (global.ai_turn && !global.waiting_for_response) {
             show_debug_message("after first, global.ai_turn && !global.waiting_for_response")
-			global.dialogueDynamic.add(s_AI_agent, global.http_text);
+			global.dialogueDynamic.add(old_agent, global.http_text);
             current_dialogue = global.dialogueDynamic.last();
         }
 
         // If AI is waiting for response, show loading message
         else if (global.ai_turn && global.waiting_for_response) {
             show_debug_message("after first, global.ai_turn && global.waiting_for_response")
-			global.dialogueDynamic.add(s_AI_agent, waiting);
+			global.dialogueDynamic.add(old_agent, waiting);
             current_dialogue = global.dialogueDynamic.last();
         }
 

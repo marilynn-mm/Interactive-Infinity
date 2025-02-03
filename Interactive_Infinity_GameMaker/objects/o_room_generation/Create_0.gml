@@ -160,7 +160,7 @@ if (!ds_list_empty(global.floor_tiles)) {
 	instance_create_layer(_AI_start_x, _AI_start_y, "Instances", o_AI_agent)
 	
 	//create door 
-	instance_create_layer(_AI_start_x + 32*2, _AI_start_y,"Instances", o_door);
+	//instance_create_layer(_AI_start_x + 32*2, _AI_start_y,"Instances", o_door);
 
 	// create list of objects 
 

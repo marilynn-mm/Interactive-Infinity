@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_AI_agent",
-    "path":"sprites/s_AI_agent/s_AI_agent.yy",
+    "name":"old_agent",
+    "path":"sprites/old_agent/old_agent.yy",
   },
   "spriteMaskId":null,
   "visible":true,

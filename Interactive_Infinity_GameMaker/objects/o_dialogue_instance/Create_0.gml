@@ -19,7 +19,7 @@ global.waiting_for_response = true;  // True when waiting for ChatGPT's API
 // global.output_text as filtered AI agent text -- after redesign prompt 
 
 //TODO Add AI here
-global.dialogueDynamic.add(s_AI_agent, "This is a test of the dialogue system")
+global.dialogueDynamic.add(old_agent, "This is a test of the dialogue system")
 //global.dialogue.add(s_AI_agent, "Hello");
 
 

@@ -100,3 +100,4 @@ if (!ds_list_empty(global.floor_tiles)) {
     show_debug_message("Error: No valid floor tiles available for item placement!");
 }
 
+show_debug_message("Item Generation Script Complete!");

@@ -1,2 +1,4 @@
-// move this to check for player's location later 
+with (all) {
+    instance_destroy(); // Destroys all instances
+}
 game_restart();
