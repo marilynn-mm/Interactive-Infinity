@@ -1,7 +1,5 @@
-if (place_meeting(x, y, o_main_char) and (not already_shown)) {
+if (place_meeting(x, y, o_main_char) and (!global.showing_dialogue)) {
 	global.showing_dialogue = true;
-	already_shown=true;
-} else if ((not place_meeting(x, y, o_main_char) and already_shown)) {
+} else if ((not place_meeting(x, y, o_main_char) and (global.showing_dialogue))) {
 	global.showing_dialogue = false;
-	already_shown=false;
 }

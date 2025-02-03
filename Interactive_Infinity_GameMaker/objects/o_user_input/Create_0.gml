@@ -27,9 +27,9 @@ creation_prompt = "Generate character details: Name (one word), Personality (two
                       "Hostility:" +
                       "Trust Level:" +
                       "Backstory:" +
-                      "Object1 Description:" + 
-					  "Object2 Description:" + 
-					  "Object3 Description:" + 
+                      string(global.item1.value) + " Object1 Description:" + 
+					  string(global.item2.value) + " Object2 Description:" + 
+					  string(global.item3.value) + " Object3 Description:" + 
 					  "Introduction Line:";
 
 // time taken: 120 (use 150 or 200 for safe guess) 

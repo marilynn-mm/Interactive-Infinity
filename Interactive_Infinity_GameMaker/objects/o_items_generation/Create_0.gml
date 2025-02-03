@@ -2,21 +2,21 @@ show_debug_message("item!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 // Initialize the global array with the first 10 items
 global.items = [
-    {key: "O_item_1", value: "Type: Handle - Color: Purple"},
-    {key: "O_item_2", value: "Type: Coconut Tree - Color: Green and Brown"},
-    {key: "O_item_3", value: "Type: Game Console - Color: Red"},
-    {key: "O_item_4", value: "Type: Star - Color: Yellow"},
-    {key: "O_item_5", value: "Type: Cherry - Color: Green and Red"},
-    {key: "O_item_6", value: "Type: Cup - Color: Yellow and Blue"},
-    {key: "O_item_7", value: "Type: Soda Can - Color: Green and Yellow"},
-    {key: "O_item_8", value: "Type: Record Player - Color: Red and Black"},
-    {key: "O_item_9", value: "Type: Dinosaur - Color: Green"},
-    {key: "O_item_10", value: "Type: Ice Cream - Color: Black, Pink, and White"},
-	{key: "O_item_11", value: "Type: Bear - Color: Brown"},
-    {key: "O_item_12", value: "Type: Duck - Color: Yellow"},
-    {key: "O_item_13", value: "Type: Car - Color: Red and Blue"},
-    {key: "O_item_14", value: "Type: Rocket - Color: Yellow, Blue, and Red"},
-    {key: "O_item_15", value: "Type: Letters - Color: Red, Yellow, and Blue"}
+    {key: "O_item_1", value: "Handle - Color: Purple"},
+    {key: "O_item_2", value: "Coconut Tree - Color: Green and Brown"},
+    {key: "O_item_3", value: "Game Console - Color: Red"},
+    {key: "O_item_4", value: "Star - Color: Yellow"},
+    {key: "O_item_5", value: "Cherry - Color: Green and Red"},
+    {key: "O_item_6", value: "Cup - Color: Yellow and Blue"},
+    {key: "O_item_7", value: "Soda Can - Color: Green and Yellow"},
+    {key: "O_item_8", value: "Record Player - Color: Red and Black"},
+    {key: "O_item_9", value: "Dinosaur - Color: Green"},
+    {key: "O_item_10", value: "Ice Cream - Color: Black, Pink, and White"},
+	{key: "O_item_11", value: "Bear - Color: Brown"},
+    {key: "O_item_12", value: "Duck - Color: Yellow"},
+    {key: "O_item_13", value: "Car - Color: Red and Blue"},
+    {key: "O_item_14", value: "Rocket - Color: Yellow, Blue, and Red"},
+    {key: "O_item_15", value: "Letters - Color: Red, Yellow, and Blue"}
 ];
 
 // Initialize the mapping between keys and object references

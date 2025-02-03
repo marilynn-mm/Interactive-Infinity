@@ -10,14 +10,11 @@ global.dialogueDynamic = new Dialogue();
 show_debug_message("-----Dynamic Dialogue system initialized.-----");
 
 // Track dialogue flow
+first_dialogue = true;
 global.showing_dialogue = false;
 global.user_turn = false;  // Start with the main character
 global.ai_turn = true;  
 global.waiting_for_response = true;  // True when waiting for ChatGPT's API
-
-// Dialogue storage
-main_character_line = global.input_text;
-ai_agent_line = "";  
 
 // global.output_text as filtered AI agent text -- after redesign prompt 
 

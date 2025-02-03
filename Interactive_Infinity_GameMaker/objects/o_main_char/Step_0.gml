@@ -8,10 +8,10 @@ instance_create_layer(x, y, "Instances", o_camera);
 
 // get inputs 
 
-var rightKey = keyboard_check(ord("D"))|| keyboard_check(vk_right);
-var leftKey = keyboard_check(ord("A"))|| keyboard_check(vk_left);
-var downKey = keyboard_check(ord("S"))|| keyboard_check(vk_down);
-var upKey = keyboard_check(ord("W"))|| keyboard_check(vk_up);
+var rightKey = keyboard_check(vk_right);
+var leftKey = keyboard_check(vk_left);
+var downKey = keyboard_check(vk_down);
+var upKey = keyboard_check(vk_up);
 
 /* Debugging
 if (place_meeting(x, y, o_wall)) {
@@ -75,30 +75,3 @@ else {
 }
 
 
-
-
-
-
-/*
-// Horizontal Movement
-if (place_meeting(x + (rightKey - leftKey) * moveSpd, y, o_wall)) {
-    hspeed = 0 // Stop horizontal movement on collision
-} else {
-    hspeed = (rightKey - leftKey) * moveSpd; 
-}
-*/ 
-
-/*
-
-// Print player's location
-show_debug_message("Player Location: x = " + string(x) + ", y = " + string(y));
-
-// Find the nearest wall to the player and print its location
-if (instance_exists(o_wall)) {
-    var nearest_wall = instance_nearest(x, y, o_wall);
-    show_debug_message("Nearest Wall Location: x = " + string(nearest_wall.x) + ", y = " + string(nearest_wall.y));
-} else {
-    show_debug_message("No walls found in the room.");
-}
-
-*/

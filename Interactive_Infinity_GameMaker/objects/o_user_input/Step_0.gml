@@ -13,7 +13,9 @@ var character_traits =
 
 // this is the system for the chatgpt API (what will stay consistent) 
 
-var _system = "You are a human doorkeeper character for a video game level set in a basement beneath an abandoned building."+
+//" set in a basement beneath an abandoned building."
+
+var _system = "You are a human doorkeeper character for a video game level"+
 "Your role involves interacting with players, deciding your hostility based on your personality, and revealing personal stories through objects." + 
 
 "Traits you should maintain or generate if undefined:"+
@@ -59,6 +61,4 @@ if (global.showing_dialogue && global.user_turn) {
         }
     }
 }
-
-
 
