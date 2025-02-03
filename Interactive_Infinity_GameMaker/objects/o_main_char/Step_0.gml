@@ -7,7 +7,6 @@ friction = 0;
 instance_create_layer(x, y, "Instances", o_camera);
 
 // get inputs 
-
 var rightKey = keyboard_check(vk_right);
 var leftKey = keyboard_check(vk_left);
 var downKey = keyboard_check(vk_down);
@@ -38,7 +37,7 @@ if (door_instance != noone) { // If a door instance is found
 	// _________add to draw text "can't go back!! 
 }
 // Check for wall collision (only if no door collision is detected)
-else if (place_meeting(x, y + vertical_move, o_wall)) {
+if (place_meeting(x, y + vertical_move, o_wall)) {
     vspeed = 0; // Stop movement on wall collision
 }
 // Allow movement if no collisions are detected
@@ -66,7 +65,8 @@ if (door_instance != noone) { // If a door instance is found
     // _________add to draw text: "You can't go back!"
 }
 // Check for wall collision (only if no door or doorback collision is detected)
-else if (place_meeting(x + horizontal_move, y, o_wall)) {
+
+if (place_meeting(x + horizontal_move, y, o_wall)) {
     hspeed = 0; // Stop movement on wall collision
 }
 // Allow movement if no collisions are detected
@@ -75,3 +75,16 @@ else {
 }
 
 
+
+if (keyboard_check(vk_left)) {
+    sprite_index = s_main_left;
+} 
+else if (keyboard_check(vk_right)) {
+    sprite_index = s_main_right;
+} 
+else if (keyboard_check(vk_up)) {
+    sprite_index = s_main_back;
+} 
+else if (keyboard_check(vk_down)) {
+    sprite_index = s_main_char;
+}
