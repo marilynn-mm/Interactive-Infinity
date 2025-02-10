@@ -24,3 +24,13 @@ When an item is needed, three random selections are made and stored in global.it
 Items follow a parent-child inheritance structure, where all items inherit from o_itemParent to reduce redundant code.
 
 Dynamic objects are instantiated using instance_create_layer(), which spawns interactive elements in real-time based on player encounters. Collision detection via place_meeting() ensures that interactions trigger only when the player is within range. To optimize resource usage, objects are removed when no longer needed using instance_destroy();.
+
+## Future Improvement 
+
+- Expansion of NPC Memory: Implement long-term interaction tracking to enhance NPC personality evolution. Store key player decisions to influence future dialogues and behaviors.
+
+- Game Puzzle: Introduce puzzle-solving mechanics to enrich gameplay. Design interconnected rooms where players must uncover clues to progress. Incorporate AI-driven hints that adapt based on player actions.
+
+Enhanced Procedural Generation: Increase room variety by integrating more dynamic environmental elements. Implement multi-layered procedural storytelling where each room contributes to an overarching narrative.
+
+- Improved AI Dialogue System:Introduce tone and personality sliders to customize NPC responses. Enhance contextual memory so NPCs recall past conversations across multiple sessions.
