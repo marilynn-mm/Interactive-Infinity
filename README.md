@@ -1,6 +1,15 @@
 # Interactive-Infinity
 Interactive Infinity is an AI-driven narrative game featuring procedurally generated infinite rooms, AI-powered NPCs with evolving personalities, and real-time player interactions. The game is built using GameMaker Studio and leverages HTTP requests to dynamically generate dialogue responses. It explores the potential of AI in storytelling, creating a unique, immersive player experience.
 
+## Project Abstract 
+Video games are a unique medium for storytelling, blending narrative and player agency in ways no other medium can. With AI unlocking unprecedented potential for dynamic interaction, new possibilities arise for role-playing games (RPGs) driven by character narratives.
+
+My passion for storytelling in games began with Undertale. Set in a world where humans and monsters once coexisted, the game gives players the choice to fight or spare the monsters they encounter. These decisions create ripples that shape the game’s trajectory, leading to one of three distinct endings. The emotional connections with the characters made every interaction carry real weight. Undertale pushed me to confront the consequences of my actions and demonstrated the narrative power of games.
+
+What if game storytelling moved beyond pre-written paths, where every choice shaped a unique, unrepeatable story? Advances in AI, like ChatGPT-4, now enable NPCs to respond contextually and evolve dynamically. Projects like Stanford's "Smallville," with AI-driven agents interacting in real time, highlight the exciting potential for revolutionary narratives.
+
+I am inspired to explore how AI can redefine and co-create stories. My project envisions an infinite series of rooms guarded by AI-driven NPCs, each with evolving personalities and backstories shaped by dialogue and puzzles. These agents dynamically adapt to player interactions, becoming active story co-creators. The game’s looping mechanic, with subtly altered rooms, symbolizes humanity’s evolving relationship with AI. By merging narrative depth with AI innovation, this project questions how AI can forge emotional connections and reshape storytelling.
+
 ## Core Systems 
 ### AI-driven NPC & Player interactions 
 NPCs generate real-time responses via a ChatGPT-4o API using the function sendgpt(global.system, message), with responses stored in global.return_message. NPC personalities evolve dynamically based on past interactions, ensuring contextual and engaging dialogue through memory management.
